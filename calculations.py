@@ -154,10 +154,9 @@ def DropCharge(Volt, Mass, Vfall, Vfield, FieldDirection=1):
 
 def ReadTimeWithUncertainty(time_value):
     """
-    Convierte un tiempo medido a ufloat con incertidumbre.
-    Para video a FPS fijos, la incertidumbre típica es 1/(2*FPS)
+    Convierte un tiempo medido a ufloat con incertidumbre, en este caso tomamos 3 fotogramas: 3/FPS
     """
-    uncertainty = 1.0 / (2.0 * FPS)
+    uncertainty = 3.0 / FPS
     return ufloat(time_value, uncertainty)
 
 # -----------------------------------------------------------------------------
